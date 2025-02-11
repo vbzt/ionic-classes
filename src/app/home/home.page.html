@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Calc
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="calc" [fullscreen]="true">
+  <ion-item style="margin-bottom: 10px;">
+    <ion-input type="number" [value]="n1" label="Insert first number" labelPlacement="floating" placeholder="..."[(ngModel)]="n1"></ion-input>
+  </ion-item>
+  
+  <ion-item style="margin-bottom: 10px;">
+    <ion-input type="number" label="Insert second number" labelPlacement="floating" placeholder="..."[(ngModel)]="n2"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 10px;">
+    <ion-input type="text" label="Insert operation" labelPlacement="floating" placeholder="+" [(ngModel)]="operation"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="calculate()" expand="block" color="warning" style="margin-top: 10px;">Calc </ion-button>
+
+  <ion-label>{{ res }}</ion-label>
+</ion-content>

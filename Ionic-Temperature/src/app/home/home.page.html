@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Temperature
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="calc" [fullscreen]="true">
+  <ion-item>
+    <ion-input type="number" [value]="temp" label="Insira a temperatura" labelPlacement="floating"
+      placeholder="..." [(ngModel)]="temp"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Converter para:</ion-label>
+    <ion-select [(ngModel)]="opcaoSelecionada">
+      <ion-select-option value="celsius">Celsius</ion-select-option>
+      <ion-select-option value="fahrenheit">Fahrenheit</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button (click) = 'convert()' expand="block" color="warning" style="margin-top: 10px;">Calc </ion-button>
+
+  
+  <ion-label>{{ converted }}</ion-label>
+</ion-content>

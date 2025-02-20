@@ -9,18 +9,31 @@ import { Component } from '@angular/core'
 export class HomePage {
   constructor() {}
 
-  opcaoSelecionada: string = ''
-  temp: number | string = ''
-  converted:string = ''
+  a: number | string = ''
+  b: number | string = ''
+  c: number | string = ''
+  output:string = ''
 
-  convert = () => {
-    
-    const temperature = Number(this.temp)
-    if (this.opcaoSelecionada == 'fahrenheit') {
-      this.converted = `${(temperature * 9/5) + 32 }°F`
-    }    
-    if (this.opcaoSelecionada == 'celsius') {
-      this.converted = `${(temperature - 32) * 5/9}°C`
+  check = () => { 
+    const a = Number(this.a)
+    const b = Number(this.b)
+    const c = Number(this.c)
+    if(a + b > c && b + c > a && a + c > b){    
+      if(a === b && a === c){
+        this.output = 'triangulo equilatero'
+        return
+      }
+      if(a === b || b === c || a === c) {
+        this.output = 'triangulo isósceles'
+        return
+      }
+      if(a !== b && a !== c){
+        this.output = 'triangulo escaleno'
+        return
+      }
+    }else{ 
+      this.output = 'nao é triangulo'
     }
   }
+ 
 }

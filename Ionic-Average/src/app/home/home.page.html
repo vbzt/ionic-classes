@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Média
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="calc" [fullscreen]="true">
+  <ion-item>
+    <ion-input max = '10' type="number" [value]="nota1" label="Nota 1" labelPlacement="floating"
+      placeholder="..." [(ngModel)]="nota1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input max = '10' type="number" [value]="nota2" label="Nota 2" labelPlacement="floating"
+      placeholder="..." [(ngModel)]="nota2"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input max = '10' type="number" [value]="nota3" label="Nota 3" labelPlacement="floating"
+      placeholder="..." [(ngModel)]="nota3"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input max = '10'  type="number" [value]="nota4" label="Nota 4" labelPlacement="floating"
+      placeholder="..." [(ngModel)]="nota4"></ion-input>
+  </ion-item>
+  <ion-button (click) = 'average()' expand="block" color="warning" style="margin-top: 10px;">Calc </ion-button>
+
+  
+  <ion-label>{{ output }}</ion-label>
+</ion-content>

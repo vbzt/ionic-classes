@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Blank</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-item>
+      <ion-label position="floating">Valor a converter</ion-label>
+      <ion-range min="0" max="100" [(ngModel)]="value" (ionChange)="convert()"></ion-range>
+    </ion-item>
+
+    <ion-list>
+      <ion-radio-group [(ngModel)]="entry" (ionChange)="convert()">
+        <ion-list-header>
+          <ion-label>Converter de:</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-radio value="km">Quilômetros (km)</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-radio value="m">Metros (m)</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-radio value="cm">Centímetros (cm)</ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <ion-radio-group [(ngModel)]="output" (ionChange)="convert()">
+        <ion-list-header>
+          <ion-label>Converter para:</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-radio value="mi">Milhas (mi)</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-radio value="ft">Pés (ft)</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-radio value="in">Polegadas (in)</ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-item>
+      <ion-label>{{ converted }}</ion-label>
+    </ion-item>
+  </div>
+</ion-content>
